@@ -7,6 +7,7 @@ import org.springframework.security.config.annotation.authentication.builders.Au
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+import org.springframework.security.web.util.matcher.AntPathRequestMatcher;
 
 import com.asama.houseclean.service.UserDetailsServiceImpl;
 
@@ -33,34 +34,34 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
     
     @Override
     protected void configure(HttpSecurity http) throws Exception {
-        http.csrf().disable();
-        
         // Các yêu cầu phải login với vai trò ROLE_EMPLOYEE hoặc ROLE_MANAGER.
         // Nếu chưa login, nó sẽ redirect tới trang /admin/login.
-        http.authorizeRequests().antMatchers("/admin/news", "/admin/order", "/admin/accountInfo")//
+        http.authorizeRequests().antMatchers("/admin/**")//
                 .access("hasAnyRole('ROLE_EMPLOYEE', 'ROLE_MANAGER')");
  
         // Các trang chỉ dành cho MANAGER
-        http.authorizeRequests().antMatchers("/admin/manager").access("hasRole('ROLE_MANAGER')");
+        http.authorizeRequests().antMatchers("/manager/**").access("hasRole('ROLE_MANAGER')");
  
         // Khi người dùng đã login, với vai trò XX.
         // Nhưng truy cập vào trang yêu cầu vai trò YY,
         // Ngoại lệ AccessDeniedException sẽ ném ra.
-        http.authorizeRequests().and().exceptionHandling().accessDeniedPage("/error");
+        http.authorizeRequests().and().exceptionHandling().accessDeniedPage("/unauthorized");
  
         // Cấu hình cho Login Form.
         http.authorizeRequests().and().formLogin()//
  
                 // 
                 .loginProcessingUrl("/j_spring_security_check") // Submit URL
-                .loginPage("/admin/login")//
-                .defaultSuccessUrl("/admin/accountInfo")//
-                .failureUrl("/admin/login?error=true")//
+                .loginPage("/account/login")//
+                .defaultSuccessUrl("/account/info")//
+                .failureUrl("/account/login?error=true")//
                 .usernameParameter("userName")//
                 .passwordParameter("password")
  
                 // Cấu hình cho trang Logout.
                 // (Sau khi logout, chuyển tới trang home)
-                .and().logout().logoutUrl("/admin/logout").logoutSuccessUrl("/");
+                .and().logout().logoutRequestMatcher(new AntPathRequestMatcher("/account/logout"))
+                .logoutSuccessUrl("/").deleteCookies("JSESSIONID")
+                .invalidateHttpSession(true);
     }
 }

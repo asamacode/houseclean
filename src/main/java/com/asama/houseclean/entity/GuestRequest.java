@@ -5,6 +5,9 @@ import java.util.Date;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
 import javax.persistence.Table;
 import javax.validation.constraints.Email;
 import javax.validation.constraints.NotEmpty;
@@ -17,6 +20,10 @@ public class GuestRequest {
     public static final Integer STT_ACCEPT = 1;
     public static final Integer STT_COMPLETED = 2;
     public static final Integer STT_CANCEL = 3;
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
 
     @NotEmpty
     private String name;
@@ -42,6 +49,14 @@ public class GuestRequest {
 
     @Column(name = "request_status")
     private Integer status;
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
 
     public String getName() {
         return name;

@@ -2,17 +2,17 @@
     pageEncoding="UTF-8"%>
 <!-- Slider -->
     <div class="hero-slide owl-carousel site-blocks-cover">
-      <div class="intro-section" style="background-image: url('static/images/hero_1.jpg');">
+      <div class="intro-section" style="background-image: url('static/images/clean1.jpg');">
         <div class="container">
           <div class="row align-items-center">
             <div class="col-lg-12 mx-auto text-center" data-aos="fade-up">
-              <h1>We Are <strong>Leading</strong> Industry of Engineers</h1>
+              <h1>We Are <strong>Leading</strong> Industry of Cleaning Services</h1>
             </div>
           </div>
         </div>
       </div>
 
-      <div class="intro-section" style="background-image: url('static/images/hero_1.jpg');">
+      <div class="intro-section" style="background-image: url('static/images/clean2.jpg');">
         <div class="container">
           <div class="row align-items-center">
             <div class="col-lg-12 mx-auto text-center" data-aos="fade-up">
@@ -31,8 +31,8 @@
       <div class="container">
         <div class="row mb-5 justify-content-center text-center">
           <div class="col-lg-5">
-              <h3 class="section-subtitle">What We Do</h3>
-              <h2 class="section-title mb-4 text-black">We Are <strong>Leading Industry</strong> of Engineering. We Love What We Do</h2>
+              <h3 class="section-subtitle">Lý Do</h3>
+              <h2 class="section-title mb-4 text-black">Khách hàng chọn <strong>Vệ sinh nhà Pleiku</strong> Sự hài lòng của bạn là niềm vinh hạnh của chúng tôi</h2>
           </div>
         </div>
         <div class="row no-gutters">
@@ -43,8 +43,8 @@
                 <span class="flaticon-engineer"></span>
               </div>
               <div class="service-1-content">
-                <h3 class="service-heading">Professional Team</h3>
-                <p>Gravida sodales condimentum pellen tesq accumsan orci quam sagittis sapie</p>
+                <h3 class="service-heading">DỊCH VỤ UY TÍN</h3>
+                <p>Lấy khách hàng làm trung tâm, chúng tôi luôn mong muốn cung cấp các dịch vụ tới khách hàng một cách tốt nhất.</p>
               </div>
             </div>
           </div>
@@ -55,8 +55,8 @@
                 <span class="flaticon-compass"></span>
               </div>
               <div class="service-1-content">
-                <h3 class="service-heading">Great Ideas</h3>
-                <p>Gravida sodales condimentum pellen tesq accumsan orci quam sagittis sapie</p>
+                <h3 class="service-heading">CHUYÊN NGHIỆP</h3>
+                <p>Đội ngũ nhân viên lành nghề, nhiều kinh nghiệm, được đào tạo kĩ càng, đồng thời khắt khe về mặt trách nhiệm, đạo đức.</p>
               </div>
             </div>
           </div>
@@ -67,8 +67,8 @@
                 <span class="flaticon-oil-platform"></span>
               </div>
               <div class="service-1-content">
-                <h3 class="service-heading">Quality Building</h3>
-                <p>Gravida sodales condimentum pellen tesq accumsan orci quam sagittis sapie</p>
+                <h3 class="service-heading">TIẾT KIỆM CHI PHÍ</h3>
+                <p>Chúng tôi đảm bảo với khách hàng rằng giá thành của dịch vụ vệ sinh hoàn toàn hợp lý với chất lượng dịch vụ cung cấp.</p>
               </div>
             </div>
           </div>
@@ -79,8 +79,8 @@
                 <span class="flaticon-crane"></span>
               </div>
               <div class="service-1-content">
-                <h3 class="service-heading">Quality Works</h3>
-                <p>Gravida sodales condimentum pellen tesq accumsan orci quam sagittis sapie</p>
+                <h3 class="service-heading">MÁY MÓC HIỆN ĐẠI</h3>
+                <p>Chúng tôi sử dụng trang thiết bị máy móc chuyên dùng, hiện đại, dung dịch vệ sinh an toàn, có nguồn gốc xuất xứ rõ ràng</p>
               </div>
             </div>
           </div>
@@ -94,12 +94,12 @@
         <div class="container">
           <div class="row">
             <div class="col-lg-6 mb-4 mb-lg-0">
-              <img src="static/images/about_1.jpg" alt="Image " class="img-fluid img-overlap">
+              <img src="static/images/gioi-thieu.jpg" alt="Image " class="img-fluid img-overlap">
             </div>
             <div class="col-lg-5 ml-auto">
-              <h3 class="section-subtitle">Why Choose Us</h3>
-              <h2 class="section-title mb-4">More than <strong>50 year experience</strong> in industry</h2>
-              <p>Reprehenderit, odio laboriosam? Blanditiis quae ullam quasi illum minima nostrum perspiciatis error consequatur sit nulla.</p>
+              <h3 class="section-subtitle">Về chúng tôi</h3>
+              <h2 class="section-title mb-4">Công ty <strong>Vệ sinh nhà Pleiku</strong></h2>
+              <p>Là một trong những công ty đi đầu trong lĩnh vực cung cấp dịch vụ làm sạch công nghiệp với đội ngũ nhân viên chuyên nghiệp, máy móc, thiết bị hiện đại, hệ thống chi nhánh trải rộng khắp Việt Nam.</p>
 
               <div class="row my-5">
                 <div class="col-lg-12 d-flex align-items-center mb-4">

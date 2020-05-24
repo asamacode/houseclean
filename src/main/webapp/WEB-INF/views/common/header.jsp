@@ -26,8 +26,8 @@
                 <span class="flaticon-placeholder text-primary"></span>
               </div>
               <div class="text">
-                <span class="h4 d-block">San Francisco</span>
-                <span class="caption-text">Mountain View, Fake st., CA</span>
+                <span class="h4 d-block"> 139 - Cách mạng tháng 8</span>
+                <span class="caption-text">Pleiku, Gia Lai</span>
               </div>
             </div>
 
@@ -38,8 +38,8 @@
                 <span class="flaticon-call text-primary"></span>
               </div>
               <div class="text">
-                <span class="h4 d-block">000 209 392 312</span>
-                <span class="caption-text">Toll free</span>
+                <span class="h4 d-block">0378397678</span>
+                <span class="caption-text">Liên hệ ngay</span>
               </div>
             </div>
           </div>
@@ -50,8 +50,8 @@
                 <span class="flaticon-email text-primary"></span>
               </div>
               <div class="text">
-                <span class="h4 d-block">info@gmail.com</span>
-                <span class="caption-text">Gournadi, 1230 Bariasl</span>
+                <span class="h4 d-block">trhuuluong@gmail.com</span>
+                <span class="caption-text">Nhà sạch Pleiku</span>
               </div>
             </div>
           </div>
@@ -75,20 +75,33 @@
             <nav class="site-navigation position-relative text-right" role="navigation">
               <ul class="site-menu main-menu js-clone-nav mr-auto d-none pl-0 d-lg-block">
                 <li class="active">
-                  <a href="index.html" class="nav-link text-left">Home</a>
+                  <a href="index.html" class="nav-link text-left">Trang chủ</a>
                 </li>
                 <li>
-                  <a href="about.html" class="nav-link text-left">About Us</a>
+                  <a href="about.html" class="nav-link text-left">Giới thiệu</a>
+                </li>
+                 <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Dịch Vụ
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <a class="dropdown-item" href="#">Vệ sinh nhà sau xây dựng</a>
+          <a class="dropdown-item" href="#">Vệ sinh văn phòng</a>
+          <a class="dropdown-item" href="#">Vệ sinh sofa</a>
+          <div class="dropdown-divider"></div>
+          <a class="dropdown-item" href="#">Giặt nệm tại nhà</a>
+          <a class="dropdown-item" href="#">Lau kính tại nhà</a>
+          <a class="dropdown-item" href="#">Giặt thảm tại nhà</a>
+        </div>
+      </li>
+                <li>
+                    <a href="testimonials.html" class="nav-link text-left">Dịch Vụ Vệ Sinh Nhà Ở</a>
                 </li>
                 <li>
-                  <a href="works.html" class="nav-link text-left">Our Projects</a>
-                </li>
-                <li>
-                    <a href="testimonials.html" class="nav-link text-left">Testimonials</a>
-                </li>
-                <li><a href="blog.html" class="nav-link text-left">Blog</a></li>
-                <li>
-                    <a href="contact.html" class="nav-link text-left">Contact</a>
+                    <a href="contact.html" class="nav-link text-left">Dịch Vụ Vệ Sinh Công Nghiệp</a>
+                  </li>
+                  <li>
+                    <a href="contact.html" class="nav-link text-left">Liên hệ</a>
                   </li>
               </ul>                                                                                                                                                                                                                                                                                          </ul>
             </nav>
