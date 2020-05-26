@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.asama.houseclean.entity.Account;
 import com.asama.houseclean.service.AccountService;
@@ -22,11 +23,31 @@ public class AccountController {
     @Autowired
     AccountService accountService;
     
-    @RequestMapping("/manager/edit-user/{id}")
+    @ResponseBody
+    @RequestMapping("/manager/delete-user/{id}")
+    public boolean deleteUser(Model model, @PathVariable("id") String userId) {
+        accountService.deleteUser(userId);
+        return true;
+    }
+    
+    @GetMapping("/manager/edit-user/{id}")
     public String editUser(Model model, @PathVariable("id") String userId) {
         Account account = accountService.findById(userId);
         model.addAttribute("user", account);
-        return "admin/account/register";
+        return "admin/account/edit";
+    }
+    
+    @PostMapping("/manager/edit-user")
+    public String editUser(Model model,
+            @Validated @ModelAttribute("user") Account user,
+            BindingResult errors) {
+        if (errors.hasErrors()) {
+            model.addAttribute("message", "Vui lòng nhập thông tin hợp lệ !");
+            return "admin/account/edit";
+        }
+        accountService.updateUser(user);
+        model.addAttribute("message", "Chỉnh sửa thành công !");
+        return "admin/account/edit";
     }
     
     @RequestMapping("/manager/list-user")

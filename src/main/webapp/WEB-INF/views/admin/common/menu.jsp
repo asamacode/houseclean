@@ -27,8 +27,8 @@
                 </a>
                 <div class="collapse" id="collapseLayouts1" aria-labelledby="headingOne"
                     data-parent="#sidenavAccordion">
-                    <nav class="sb-sidenav-menu-nested nav"><a class="nav-link" href="layout-static.html">Thêm dịch
-                            vụ</a><a class="nav-link" href="layout-sidenav-light.html">Danh sách dịch vụ</a></nav>
+                    <nav class="sb-sidenav-menu-nested nav"><a class="nav-link" href="/manager/services/add">Thêm dịch
+                            vụ</a><a class="nav-link" href="/manager/services/list">Danh sách dịch vụ</a></nav>
                 </div>
                 <div class="sb-sidenav-menu-heading">Bài viết</div>
                 <a class="nav-link" href="charts.html">

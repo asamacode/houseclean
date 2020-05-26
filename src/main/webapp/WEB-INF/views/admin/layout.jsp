@@ -15,6 +15,11 @@
         <link rel="stylesheet" href="<c:url value='/static/css/admin.styles.css'/>" rel="stylesheet">
         <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
         <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/js/all.min.js" crossorigin="anonymous"></script>
+        <script src="<c:url value='/static/js/jquery-3.3.1.min.js' /> "></script>
+        <script src="<c:url value='/static/js/bootstrap.min.js' />"></script>
+        <script type="text/javascript" src="http://js.nicedit.com/nicEdit-latest.js"></script>
+        <script src="<c:url value='/static/js/admin.scripts.js' />"></script>
+        <script src="<c:url value='/static/js/house.admin.js' />"></script>
     </head>
     <body>
        <!-- Header -->
@@ -36,9 +41,5 @@
                 <!-- END Footer -->
             </div>
         </div>
-       	<script src="<c:url value='/static/js/jquery-3.3.1.min.js' /> "></script>
-        <script src="<c:url value='/static/js/bootstrap.min.js' />"></script>
-        <script src="<c:url value='/static/js/admin.scripts.js' />"></script>
-        <script src="<c:url value='/static/js/house.admin.js' />"></script>
     </body>
 </html>

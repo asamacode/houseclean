@@ -23,7 +23,7 @@ public class UserDetailsServiceImpl implements UserDetailsService {
 
     @Override
     public UserDetails loadUserByUsername(String id) throws UsernameNotFoundException {
-        Account account = accountDAO.findUserById(id);
+        Account account = accountDAO.findUserByIdAndStatus(id);
 
         if (account == null) {
             throw new UsernameNotFoundException("Tài khoản " + id + " không tồn tại trong hệ thống");

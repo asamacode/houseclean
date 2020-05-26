@@ -12,6 +12,8 @@ import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 import javax.validation.constraints.NotEmpty;
 
+import org.hibernate.validator.constraints.Length;
+
 @Entity
 @Table(name = "News")
 public class News {
@@ -37,7 +39,9 @@ public class News {
     @Column(length = 500)
     private String introduce;
 
-    @Column(length = 20000)
+    @Column(columnDefinition = "TEXT")
+    @NotEmpty
+    @Length(max = 65000)
     private String description;
 
     @ManyToOne

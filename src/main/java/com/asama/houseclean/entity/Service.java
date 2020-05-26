@@ -7,6 +7,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 import javax.validation.constraints.NotEmpty;
+import javax.validation.constraints.NotNull;
 
 import org.hibernate.validator.constraints.Length;
 
@@ -26,10 +27,24 @@ public class Service {
     private String image;
 
     @Column(length = 500)
+    @NotEmpty
     private String introduce;
 
-    @Column(length = 20000)
+    @Column(columnDefinition = "TEXT")
+    @NotEmpty
+    @Length(max = 65000)
     private String description;
+    
+    @NotNull
+    private Boolean special;
+
+    public Boolean getSpecial() {
+        return special;
+    }
+
+    public void setSpecial(Boolean special) {
+        this.special = special;
+    }
 
     public Integer getId() {
         return id;

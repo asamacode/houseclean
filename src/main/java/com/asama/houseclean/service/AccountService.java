@@ -14,14 +14,18 @@ public class AccountService {
 
     @Autowired
     AccountDAO accountDAO;
-    
+
     @Autowired
     BCryptPasswordEncoder encoder;
-    
+
+    public void setOffUser(String userId) {
+        accountDAO.setUserInActive(userId);
+    }
+
     public Account findById(String userId) {
         return accountDAO.findUserById(userId);
     }
-    
+
     public boolean checkExistUserId(String userId) {
         Account user = accountDAO.findUserById(userId);
         if (user != null) {
@@ -29,15 +33,24 @@ public class AccountService {
         }
         return false;
     }
-    
+
     public void saveUser(Account account) {
         String pass = encoder.encode(account.getPassword());
         account.setPassword(pass);
         accountDAO.saveUser(account);
     }
-    
+
     public List<Account> getAllUser() {
         return accountDAO.findAll();
     }
-    
+
+    public void updateUser(Account account) {
+        
+        accountDAO.updateUser(account);
+    }
+
+    public void deleteUser(String userId) {
+        accountDAO.deleteUser(userId);
+    }
+
 }

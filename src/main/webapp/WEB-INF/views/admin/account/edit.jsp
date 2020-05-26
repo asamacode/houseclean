@@ -13,13 +13,13 @@
                             </div>
                             <div class="card-body">
                                 <h4>${message}</h4>
-                                <form:form action="/manager/register" modelAttribute="user">
+                                <form:form action="/manager/edit-user" modelAttribute="user">
                                     <div class="form-row">
                                         <div class="col-md-6">
                                             <div class="form-group"><label class="small mb-1" for="inputUserName">Tên
                                                     người dùng</label>
                                                 <form:input path="id" class="form-control py-4" id="inputUserName"
-                                                    type="text" placeholder="Enter username" />
+                                                    type="text" placeholder="Enter username"  readonly="true"/>
                                                 <form:errors path="id" />
                                             </div>
                                         </div>
@@ -57,7 +57,7 @@
                                             <div class="form-group"><label class="small mb-1" for="inputPassword">Mật
                                                     khẩu</label>
                                                 <form:input path="password" class="form-control py-4" id="inputPassword"
-                                                    type="password" placeholder="Enter password" />
+                                                    type="password" placeholder="Enter password" readonly="true"/>
                                                 <form:errors path="password" />
                                             </div>
                                         </div>
@@ -70,8 +70,16 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="form-group mt-4 mb-0"><button class="btn btn-primary btn-block"
-                                           type="submit">Tạo tài khoản</button></div>
+                                    <div class="col-md-6">
+                                            <div class="form-group"><label class="small mb-1" for="inputPhone">Trạng thái</label>
+                                                <form:select path="active">
+                                                    <form:option selected="${(user.active == true)? 'selected':'' }" value="true">Kích hoạt</form:option>
+                                                    <form:option selected="${(user.active == false)? 'selected':'' }" value="false">Khóa</form:option>
+                                                </form:select>
+                                                <form:errors path="role" />
+                                            </div>
+                                        </div>
+                                    <div class="form-group mt-4 mb-0"><button class="btn btn-primary btn-block" type="submit">Cập nhật thông tin</button></div>
                                 </form:form>
                             </div>
 

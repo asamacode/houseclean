@@ -18,11 +18,15 @@ public class AccountDAOImpl implements AccountDAO {
 
     @Autowired
     private SessionFactory factory;
-    
+
     @Override
-    public Account findUserById(String id) {
+    public Account findUserByIdAndStatus(String id) {
+        String hql = "FROM Account c WHERE c.id = :userId AND c.active = true";
         Session session = factory.getCurrentSession();
-        return session.find(Account.class, id);
+        TypedQuery<Account> query = session.createQuery(hql, Account.class);
+        query.setParameter("userId", id);
+        Account account = query.getSingleResult();
+        return account;
     }
 
     @Override
@@ -48,10 +52,25 @@ public class AccountDAOImpl implements AccountDAO {
     public List<Account> findAll() {
         String hql = "FROM Account";
         Session session = factory.getCurrentSession();
-        
+
         TypedQuery<Account> query = session.createQuery(hql, Account.class);
         List<Account> accounts = query.getResultList();
         return accounts;
+    }
+
+    @Override
+    public void setUserInActive(String userId) {
+        Session session = factory.getCurrentSession();
+        Account account = session.find(Account.class, userId);
+        account.setActive(false);
+        session.update(account);
+    }
+
+    @Override
+    public Account findUserById(String id) {
+        Session session = factory.getCurrentSession();
+        Account account = session.find(Account.class, id);
+        return account;
     }
 
 }
