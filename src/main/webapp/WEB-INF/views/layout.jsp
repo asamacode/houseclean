@@ -31,8 +31,9 @@
 
     <link rel="stylesheet" href="<c:url value='/static/css/aos.css' />">
     <link href="<c:url value='/static/css/jquery.mb.YTPlayer.min.css' /> " media="all" rel="stylesheet" type="text/css">
-
+	
     <link rel="stylesheet" href="<c:url value='/static/css/style.css'/>" rel="stylesheet">
+    <link rel="stylesheet" href="<c:url value='/static/css/asama.css'/>" rel="stylesheet">
 
 </head>
 

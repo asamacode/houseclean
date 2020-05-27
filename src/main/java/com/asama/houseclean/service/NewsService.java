@@ -33,4 +33,16 @@ public class NewsService {
     public void delete(Long id) {
        newsDAO.delete(id);
     }
+
+    public List<News> getListNewest() {
+        return newsDAO.getArticleNewest();
+    }
+
+    public List<News> getPage(Integer pageNum) {
+        return newsDAO.getPage(pageNum);
+    }
+
+    public Integer getPageCount() {
+        return newsDAO.getPageCount();
+    }
 }

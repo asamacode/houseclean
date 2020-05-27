@@ -15,4 +15,10 @@ public interface NewsDAO {
     void delete(Long id);
     
     List<News> findAll();
+
+    List<News> getArticleNewest();
+
+    List<News> getPage(Integer pageNum);
+
+    Integer getPageCount();
 }

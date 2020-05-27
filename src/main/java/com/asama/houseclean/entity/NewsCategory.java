@@ -4,6 +4,7 @@ import java.util.List;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -26,7 +27,7 @@ public class NewsCategory {
     @Length(min = 3, max = 200)
     private String name;
 
-    @OneToMany(mappedBy = "newsCategory")
+    @OneToMany(mappedBy = "newsCategory", fetch = FetchType.EAGER)
     List<News> news;
 
     public Integer getId() {

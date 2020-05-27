@@ -16,9 +16,11 @@ import com.asama.houseclean.entity.News;
 @Transactional
 public class NewsDAOImpl implements NewsDAO {
 
+    private static final Integer LIMIT = 1;
+
     @Autowired
     SessionFactory factory;
-    
+
     @Override
     public News findById(Long id) {
         Session session = factory.getCurrentSession();
@@ -52,6 +54,43 @@ public class NewsDAOImpl implements NewsDAO {
         TypedQuery<News> query = session.createQuery(hql, News.class);
         List<News> news = query.getResultList();
         return news;
+    }
+
+    @Override
+    public List<News> getArticleNewest() {
+        String hql = "FROM News n ORDER BY n.timePost DESC";
+
+        Session session = factory.getCurrentSession();
+
+        TypedQuery<News> query = session.createQuery(hql, News.class);
+        query.setMaxResults(6);
+        List<News> news = query.getResultList();
+
+        return news;
+    }
+
+    @Override
+    public List<News> getPage(Integer pageNum) {
+        String hql = "FROM News";
+
+        Session session = factory.getCurrentSession();
+        TypedQuery<News> query = session.createQuery(hql, News.class);
+        query.setFirstResult(pageNum * LIMIT);
+        query.setMaxResults(LIMIT);
+        List<News> news = query.getResultList();
+
+        return news;
+    }
+
+    @Override
+    public Integer getPageCount() {
+        String hql = "SELECT COUNT(n) FROM News n";
+
+        Session session = factory.getCurrentSession();
+        TypedQuery<Long> query = session.createQuery(hql, Long.class);
+        Long rowCount = query.getSingleResult();
+        Integer pageCount = (int) Math.ceil(1.0*rowCount/LIMIT);
+        return pageCount;
     }
 
 }
