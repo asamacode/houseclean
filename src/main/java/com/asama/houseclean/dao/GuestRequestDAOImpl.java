@@ -1,6 +1,7 @@
 package com.asama.houseclean.dao;
 
 import java.util.List;
+import java.util.Optional;
 
 import javax.persistence.TypedQuery;
 import javax.transaction.Transactional;
@@ -26,9 +27,10 @@ public class GuestRequestDAOImpl implements GuestRequestDAO {
     }
 
     @Override
-    public void save(GuestRequest request) {
+    public GuestRequest save(GuestRequest request) {
         Session session = factory.getCurrentSession();
         session.save(request);
+        return request;
     }
 
     @Override
@@ -52,6 +54,17 @@ public class GuestRequestDAOImpl implements GuestRequestDAO {
         TypedQuery<GuestRequest> query = session.createQuery(hql, GuestRequest.class);
         List<GuestRequest> requests = query.getResultList();
         return requests;
+    }
+
+    @Override
+    public Optional<GuestRequest> findByIdAndStatus(Long id) {
+        String hql = "FROM GuestRequest g WHERE g.id = :gid AND g.status = " + GuestRequest.STT_PROCESS;
+        Session session = factory.getCurrentSession();
+
+        TypedQuery<GuestRequest> query = session.createQuery(hql, GuestRequest.class);
+        query.setParameter("gid", id);
+        Optional<GuestRequest> request = Optional.of(query.getSingleResult());
+        return request;
     }
 
 }

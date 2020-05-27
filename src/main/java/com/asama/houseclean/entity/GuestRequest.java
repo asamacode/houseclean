@@ -1,6 +1,5 @@
 package com.asama.houseclean.entity;
 
-import java.sql.Time;
 import java.util.Date;
 
 import javax.persistence.Column;
@@ -9,8 +8,14 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
 import javax.validation.constraints.Email;
+import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotEmpty;
+import javax.validation.constraints.NotNull;
+
+import org.springframework.format.annotation.DateTimeFormat;
 
 @Entity
 @Table(name = "Guest_Requests")
@@ -38,14 +43,15 @@ public class GuestRequest {
     @NotEmpty
     private String address;
 
-    @NotEmpty
     private String description;
 
-    @NotEmpty
+    @NotNull
+    @DateTimeFormat(pattern = "dd/MM/yyyy")
+    @Temporal(TemporalType.DATE)
     private Date date;
 
-    @NotEmpty
-    private Time time;
+    @NotBlank
+    private String time;
 
     @Column(name = "request_status")
     private Integer status;
@@ -106,11 +112,11 @@ public class GuestRequest {
         this.date = date;
     }
 
-    public Time getTime() {
+    public String getTime() {
         return time;
     }
 
-    public void setTime(Time time) {
+    public void setTime(String time) {
         this.time = time;
     }
 

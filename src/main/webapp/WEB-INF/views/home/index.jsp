@@ -4,22 +4,18 @@
 	<!-- Slider -->
 		<jsp:include page="slider.jsp" />  
 	<!-- END slider -->
-    
-	<!-- Reason -->
-    	<jsp:include page="reason.jsp" /> 
-    <!-- END Reason -->
 
 	 <!-- About us -->
     	<jsp:include page="about.jsp" /> 
     <!-- END About us -->
 
-	 <!-- Quotes -->
-    	<jsp:include page="quotes.jsp" /> 
-	 <!-- END Quotes -->
-
 	 <!-- Services -->
     	<jsp:include page="services.jsp" /> 
 	 <!-- END Services -->
+	 
+	 <!-- Reason -->
+    	<jsp:include page="reason.jsp" /> 
+    <!-- END Reason -->
     
 	 <!-- People says -->
     	<jsp:include page="peoplesays.jsp" /> 
