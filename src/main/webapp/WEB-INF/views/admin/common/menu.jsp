@@ -31,15 +31,23 @@
                             vụ</a><a class="nav-link" href="/manager/services/list">Danh sách dịch vụ</a></nav>
                 </div>
                 <div class="sb-sidenav-menu-heading">Bài viết</div>
-                <a class="nav-link" href="charts.html">
+                <a class="nav-link" href="/admin/news/add">
                     <div class="sb-nav-link-icon"><i class="fas fa-chart-area"></i></div>
                     Thêm bài viết
                 </a>
-                <a class="nav-link" href="charts.html">
-                    <div class="sb-nav-link-icon"><i class="fas fa-chart-area"></i></div>
+                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseLayouts2"
+                    aria-expanded="false" aria-controls="collapseLayouts2">
+                    <div class="sb-nav-link-icon"><i class="fas fa-columns"></i></div>
                     Danh mục bài viết
+                    <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
                 </a>
-                <a class="nav-link" href="tables.html">
+                <div class="collapse" id="collapseLayouts2" aria-labelledby="headingOne"
+                    data-parent="#sidenavAccordion">
+                    <nav class="sb-sidenav-menu-nested nav">
+                    <a class="nav-link" href="/manager/newscategory/add">Thêm danh mục</a>
+                    <a class="nav-link" href="/manager/newscategory/list">Danh sách danh mục</a></nav>
+                </div>
+                <a class="nav-link" href="/manager/news/list">
                     <div class="sb-nav-link-icon"><i class="fas fa-table"></i></div>
                     Danh sách bài viết
                 </a>

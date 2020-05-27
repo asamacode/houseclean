@@ -10,9 +10,12 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
 import javax.validation.constraints.NotEmpty;
 
 import org.hibernate.validator.constraints.Length;
+import org.springframework.format.annotation.DateTimeFormat;
 
 @Entity
 @Table(name = "News")
@@ -29,10 +32,10 @@ public class News {
     @NotEmpty
     private String title;
 
-    @NotEmpty
+    @DateTimeFormat(pattern = "dd/MM/yyyy HH:mm")
+    @Temporal(TemporalType.TIMESTAMP)
     private Date timePost;
 
-    @NotEmpty
     private String image;
 
     @NotEmpty

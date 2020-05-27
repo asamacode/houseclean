@@ -30,7 +30,7 @@ public class CustomSimpleMappingExceptionResolver extends SimpleMappingException
                                               Object handler, Exception ex) {
 
         // Log exception
-//        ex.printStackTrace();
+        ex.printStackTrace();
         String exceptionType = ex.getClass().getCanonicalName();
 
         // Get the ModelAndView to use

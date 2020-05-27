@@ -28,7 +28,7 @@ public class NewsCategoryDAOImpl implements NewsCategoryDAO {
     @Override
     public void save(NewsCategory news) {
         Session session = factory.getCurrentSession();
-        session.save(session);
+        session.save(news);
     }
 
     @Override

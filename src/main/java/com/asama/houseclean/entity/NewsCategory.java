@@ -9,6 +9,9 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
+import javax.validation.constraints.NotEmpty;
+
+import org.hibernate.validator.constraints.Length;
 
 @Entity
 @Table(name = "Categories")
@@ -19,6 +22,8 @@ public class NewsCategory {
     private Integer id;
 
     @Column(length = 200)
+    @NotEmpty
+    @Length(min = 3, max = 200)
     private String name;
 
     @OneToMany(mappedBy = "newsCategory")

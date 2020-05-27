@@ -18,7 +18,6 @@
         <script src="<c:url value='/static/js/jquery-3.3.1.min.js' /> "></script>
         <script src="<c:url value='/static/js/bootstrap.min.js' />"></script>
         <script type="text/javascript" src="http://js.nicedit.com/nicEdit-latest.js"></script>
-        <script src="<c:url value='/static/js/admin.scripts.js' />"></script>
         <script src="<c:url value='/static/js/house.admin.js' />"></script>
     </head>
     <body>
@@ -42,4 +41,5 @@
             </div>
         </div>
     </body>
+    <script src="<c:url value='/static/js/admin.scripts.js' />"></script>
 </html>

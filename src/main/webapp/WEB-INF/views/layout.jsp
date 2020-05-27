@@ -14,7 +14,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-
+	<link rel="icon" href="https://vesinhnha.com.vn/wp-content/uploads/2019/11/cropped-favicon-32x32.jpg" sizes="32x32">
     <link href="https://fonts.googleapis.com/css?family=Oswald:300,400,700|Muli:300,400" rel="stylesheet">
     <link rel="stylesheet" href="<c:url value='/static/fonts/icomoon/style.css'/>">
     <link rel="stylesheet" href="<c:url value='/static/css/bootstrap.min.css' />">
