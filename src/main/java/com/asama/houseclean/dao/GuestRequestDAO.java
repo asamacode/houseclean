@@ -18,4 +18,20 @@ public interface GuestRequestDAO {
     List<GuestRequest> findAll();
 
     Optional<GuestRequest> findByIdAndStatus(Long id);
+
+    List<GuestRequest> getListAcceptByPage(Integer page);
+
+    Integer getAcceptPageCount();
+    
+    List<GuestRequest> getListProcesstByPage(Integer page);
+
+    Integer getProcessPageCount();
+    
+    List<GuestRequest> getListCompleteByPage(Integer page);
+
+    Integer getCompletePageCount();
+    
+    List<GuestRequest> getListCanceltByPage(Integer page);
+
+    Integer getCancelPageCount();
 }

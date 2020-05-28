@@ -44,4 +44,36 @@ public class GuestRequestService {
     public Optional<GuestRequest> findByIdAndStatus(Long id) {
         return gDao.findByIdAndStatus(id);
     }
+
+    public List<GuestRequest> getAcceptPage(Integer page) {
+        return gDao.getListAcceptByPage(page);
+    }
+    
+    public Integer getAcceptPageCount() {
+        return gDao.getAcceptPageCount();
+    }
+
+    public List<GuestRequest> getProcessPage(int i) {
+        return gDao.getListProcesstByPage(i);
+    }
+
+    public Integer getProcessPageCount() {
+        return gDao.getProcessPageCount();
+    }
+
+    public List<GuestRequest> getCompletePage(int i) {
+        return gDao.getListCanceltByPage(i);
+    }
+
+    public Integer getCompletePageCount() {
+       return gDao.getCompletePageCount();
+    }
+
+    public List<GuestRequest> getCancelPage(int i) {
+        return gDao.getListCanceltByPage(i);
+    }
+
+    public Integer getCancelPageCount() {
+        return gDao.getCancelPageCount();
+    }
 }

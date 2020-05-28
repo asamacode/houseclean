@@ -1,4 +1,4 @@
-package com.asama.houseclean;
+package com.asama.houseclean.bean;
 
 public class MailInfo {
 

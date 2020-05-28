@@ -17,6 +17,8 @@ import com.asama.houseclean.entity.GuestRequest;
 @Transactional
 public class GuestRequestDAOImpl implements GuestRequestDAO {
 
+    private static final Integer LIMIT = 9; 
+    
     @Autowired
     SessionFactory factory;
 
@@ -65,6 +67,98 @@ public class GuestRequestDAOImpl implements GuestRequestDAO {
         query.setParameter("gid", id);
         Optional<GuestRequest> request = Optional.of(query.getSingleResult());
         return request;
+    }
+
+    @Override
+    public List<GuestRequest> getListAcceptByPage(Integer page) {
+        String hql = "FROM GuestRequest g WHERE g.status = " + GuestRequest.STT_ACCEPT;
+        Session session = factory.getCurrentSession();
+
+        TypedQuery<GuestRequest> query = session.createQuery(hql, GuestRequest.class);
+        query.setFirstResult(LIMIT * page);
+        query.setMaxResults(LIMIT);
+        List<GuestRequest> request =query.getResultList();
+        return request;
+    }
+    
+    @Override
+    public Integer getAcceptPageCount() {
+        String hql = "SELECT COUNT(g) FROM GuestRequest g WHERE g.status = " + GuestRequest.STT_ACCEPT;
+
+        Session session = factory.getCurrentSession();
+        TypedQuery<Long> query = session.createQuery(hql, Long.class);
+        Long rowCount = query.getSingleResult();
+        Integer pageCount = (int) Math.ceil(1.0*rowCount/LIMIT);
+        return pageCount;
+    }
+
+    @Override
+    public List<GuestRequest> getListProcesstByPage(Integer page) {
+        String hql = "FROM GuestRequest g WHERE g.status = " + GuestRequest.STT_PROCESS;
+        Session session = factory.getCurrentSession();
+
+        TypedQuery<GuestRequest> query = session.createQuery(hql, GuestRequest.class);
+        query.setFirstResult(LIMIT * page);
+        query.setMaxResults(LIMIT);
+        List<GuestRequest> request =query.getResultList();
+        return request;
+    }
+
+    @Override
+    public Integer getProcessPageCount() {
+        String hql = "SELECT COUNT(g) FROM GuestRequest g WHERE g.status = " + GuestRequest.STT_PROCESS;
+
+        Session session = factory.getCurrentSession();
+        TypedQuery<Long> query = session.createQuery(hql, Long.class);
+        Long rowCount = query.getSingleResult();
+        Integer pageCount = (int) Math.ceil(1.0*rowCount/LIMIT);
+        return pageCount;
+    }
+
+    @Override
+    public List<GuestRequest> getListCompleteByPage(Integer page) {
+        String hql = "FROM GuestRequest g WHERE g.status = " + GuestRequest.STT_COMPLETED;
+        Session session = factory.getCurrentSession();
+
+        TypedQuery<GuestRequest> query = session.createQuery(hql, GuestRequest.class);
+        query.setFirstResult(LIMIT * page);
+        query.setMaxResults(LIMIT);
+        List<GuestRequest> request =query.getResultList();
+        return request;
+    }
+
+    @Override
+    public Integer getCompletePageCount() {
+        String hql = "SELECT COUNT(g) FROM GuestRequest g WHERE g.status = " + GuestRequest.STT_COMPLETED;
+
+        Session session = factory.getCurrentSession();
+        TypedQuery<Long> query = session.createQuery(hql, Long.class);
+        Long rowCount = query.getSingleResult();
+        Integer pageCount = (int) Math.ceil(1.0*rowCount/LIMIT);
+        return pageCount;
+    }
+
+    @Override
+    public List<GuestRequest> getListCanceltByPage(Integer page) {
+        String hql = "FROM GuestRequest g WHERE g.status = " + GuestRequest.STT_CANCEL;
+        Session session = factory.getCurrentSession();
+
+        TypedQuery<GuestRequest> query = session.createQuery(hql, GuestRequest.class);
+        query.setFirstResult(LIMIT * page);
+        query.setMaxResults(LIMIT);
+        List<GuestRequest> request =query.getResultList();
+        return request;
+    }
+
+    @Override
+    public Integer getCancelPageCount() {
+        String hql = "SELECT COUNT(g) FROM GuestRequest g WHERE g.status = " + GuestRequest.STT_CANCEL;
+
+        Session session = factory.getCurrentSession();
+        TypedQuery<Long> query = session.createQuery(hql, Long.class);
+        Long rowCount = query.getSingleResult();
+        Integer pageCount = (int) Math.ceil(1.0*rowCount/LIMIT);
+        return pageCount;
     }
 
 }

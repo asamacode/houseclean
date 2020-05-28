@@ -10,7 +10,7 @@ import org.springframework.mail.javamail.JavaMailSender;
 import org.springframework.mail.javamail.MimeMessageHelper;
 import org.springframework.stereotype.Service;
 
-import com.asama.houseclean.MailInfo;
+import com.asama.houseclean.bean.MailInfo;
 
 @Service
 public class MailService {
