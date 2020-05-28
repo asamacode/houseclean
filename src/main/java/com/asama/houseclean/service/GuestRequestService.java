@@ -62,7 +62,7 @@ public class GuestRequestService {
     }
 
     public List<GuestRequest> getCompletePage(int i) {
-        return gDao.getListCanceltByPage(i);
+        return gDao.getListCompleteByPage(i);
     }
 
     public Integer getCompletePageCount() {

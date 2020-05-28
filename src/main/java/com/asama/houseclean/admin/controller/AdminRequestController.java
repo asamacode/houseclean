@@ -7,6 +7,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.asama.houseclean.entity.GuestRequest;
 import com.asama.houseclean.service.GuestRequestService;
@@ -17,6 +18,31 @@ public class AdminRequestController {
 
     @Autowired
     GuestRequestService gService;
+    
+    @ResponseBody
+    @RequestMapping("/cancel/{id}")
+    public Boolean cancel(@PathVariable("id") Long id) {
+        GuestRequest guestRequest = gService.findById(id);
+        guestRequest.setStatus(GuestRequest.STT_CANCEL);
+        gService.update(guestRequest);
+        return true;
+    }
+    
+    @ResponseBody
+    @RequestMapping("/complete/{id}")
+    public Boolean complete(@PathVariable("id") Long id) {
+        GuestRequest guestRequest = gService.findById(id);
+        guestRequest.setStatus(GuestRequest.STT_COMPLETED);
+        gService.update(guestRequest);
+        return true;
+    }
+    
+    @RequestMapping("/view/{id}")
+    public String view(Model model, @PathVariable("id") Long id) {
+        GuestRequest guestRequest = gService.findById(id);
+        model.addAttribute("req", guestRequest);
+        return "admin/request/detail";
+    }
 
     @RequestMapping(value = { "/list/accept", "list/accept/{page}" })
     public String listAccept(Model model, @PathVariable(required = false, name = "page") Integer page) {

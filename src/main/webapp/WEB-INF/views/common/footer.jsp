@@ -10,32 +10,38 @@
             <p><a href="#">Learn More</a></p>
           </div>
           <div class="col-lg-3">
-            <h3 class="footer-heading"><span>Our Company</span></h3>
+            <h3 class="footer-heading"><span>Dịch vụ vệ sinh chính</span></h3>
             <ul class="list-unstyled">
-                <li><a href="#">About</a></li>
-                <li><a href="#">News</a></li>
-                <li><a href="#">Services</a></li>
-                <li><a href="#">Our Team</a></li>
-                <li><a href="#">Careers</a></li>
-                <li><a href="#">Projects</a></li>
+                <li><a href="#">Vệ sinh công nghiệp</a></li>
+                <li><a href="#">Vệ sinh nhà ở</a></li>
+                <li><a href="#">Dịch vụ vệ sinh văn phòng</a></li>
+                <li><a href="#">Dịch vụ vệ sinh nhà xưởng</a></li>
+                <li><a href="#">Dịch vụ vệ sinh sau xây dựng</a></li>
+                <li><a href="#">Dịch vụ giặt thảm</a></li>
+                <li><a href="#">Dịch vụ vệ sinh sofa</a></li>
+                <li><a href="#">Dịch vụ giặt ghế văn phòng</a></li>
+                <li><a href="#">Dịch vụ giặt nệm</a></li>
+                <li><a href="#">Dịch vụ lau kính</a></li>
+                <li><a href="#"></a></li>
+                <li><a href="#">Dịch vụ tổng vệ sinh</a></li>
             </ul>
           </div>
           <div class="col-lg-3">
-              <h3 class="footer-heading"><span>Our Services</span></h3>
+              <h3 class="footer-heading"><span>Chính sách</span></h3>
               <ul class="list-unstyled">
-                  <li><a href="#">Industrial</a></li>
-                  <li><a href="#">Construction</a></li>
-                  <li><a href="#">Remodeling</a></li>
+                  <li><a href="#">Giới thiệu</a></li>
+                  <li><a href="#">Chính sách bảo mật</a></li>
+                  <li><a href="#">Trang chủ</a></li>
               </ul>
           </div>
           <div class="col-lg-3">
-              <h3 class="footer-heading"><span>Contact</span></h3>
+              <h3 class="footer-heading"><span>Liên hệ</span></h3>
               <ul class="list-unstyled">
-                  <li><a href="#">Help Center</a></li>
-                  <li><a href="#">Support Community</a></li>
-                  <li><a href="#">Press</a></li>
+                  <li><a href="#">Trung tâm hỗ trợ</a></li>
+                  <li><a href="#">Cộng đồng</a></li>
+                  <li><a href="#">Liên hệ</a></li>
                   <li><a href="#">FAQ</a></li>
-                  <li><a href="#">Our Partners</a></li>
+                  <li><a href="#">Đối tác</a></li>
               </ul>
           </div>
         </div>

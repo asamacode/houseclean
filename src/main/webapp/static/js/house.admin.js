@@ -1,5 +1,49 @@
 $(document).ready(function() {
 	
+	$(".btn-dialog-cancel").click(function() {
+    	var sid = $(this).closest("tr").attr("data-id");
+    	$("#cancelModal #reqid").val(sid); 	
+    });
+    
+	 $("#btn-cancel-rq").click(function() {
+	    	var id = $("#cancelModal #reqid").val();
+	    	
+	    	$.ajax({
+	    		url: "/admin/request/cancel/"+id,
+	    		success: function(res) {
+	    			if (res) {
+	    				$("[data-dismiss]").click();
+	    				location.reload();
+	    				alert("Đã hủy lịch hẹn :(( ");
+	    			} else {
+	    				alert("Xảy ra lỗi");
+	    			}
+	    		}
+	    	});
+	    })
+	
+	$(".btn-dialog-complete").click(function() {
+    	var sid = $(this).closest("tr").attr("data-id");
+    	$("#completeModal #reqid").val(sid); 	
+    });
+    
+	 $("#btn-complete-rq").click(function() {
+	    	var id = $("#completeModal #reqid").val();
+	    	
+	    	$.ajax({
+	    		url: "/admin/request/complete/"+id,
+	    		success: function(res) {
+	    			if (res) {
+	    				$("[data-dismiss]").click();
+	    				location.reload();
+	    				alert("Đã hoàn tất lịch hẹn !");
+	    			} else {
+	    				alert("Xảy ra lỗi");
+	    			}
+	    		}
+	    	});
+	    })
+	
 	$(".btn-open-dialog-news").click(function() {
     	var sid = $(this).closest("tr").attr("data-id");
     	$("#mModal #newsid").val(sid); 	
